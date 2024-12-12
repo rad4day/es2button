@@ -148,7 +148,7 @@
                         "int": 0
                     },
                     "Resolution": {
-                        "int": 400
+                        "int": 300
                     },
                     "ScanAreaHeight": {
                         "int": 4677

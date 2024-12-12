@@ -4,10 +4,8 @@ fn main() {
     let out_dir = env::var_os("OUT_DIR").unwrap();
 
     let install_lib_dir = format!(
-        r#""/usr/lib/{}-{}-{}""#,
-        env::var("CARGO_CFG_TARGET_ARCH").unwrap(),
-        env::var("CARGO_CFG_TARGET_OS").unwrap(),
-        env::var("CARGO_CFG_TARGET_ENV").unwrap()
+        r#""{}/lib/x86_64-linux-gnu""#,
+        env::var("CONFIG_EPSONSCAN2_PATH").unwrap()
     );
 
     let mut builder = cc::Build::new();
