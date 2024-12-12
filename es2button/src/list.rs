@@ -7,8 +7,7 @@ const EPSON_USB_VID: u16 = 0x04b8;
 pub(crate) fn epson_scanners() -> Vec<UsbDevice> {
     let mut devices = Vec::<types::UsbDevice>::new();
 
-    let ctx = libusb::Context::new().unwrap();
-    for device in ctx.devices().unwrap().iter() {
+    for device in rusb::devices().unwrap().iter() {
         let descriptor = device.device_descriptor().unwrap();
 
         if descriptor.vendor_id() != EPSON_USB_VID {
